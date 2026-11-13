@@ -1,0 +1,25 @@
+const paths = {
+  grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+  flask:'<path d="M9 3h6M10 3v7l-6 9a2 2 0 002 2h12a2 2 0 002-2l-6-9V3M8 14h8"/>',
+  database:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>',
+  layers:'<path d="M12 3L2 8l10 5 10-5-10-5zM2 12l10 5 10-5M2 16l10 5 10-5"/>',
+  settings:'<path d="M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1 1-3z"/><circle cx="12" cy="12" r="3"/>',
+  book:'<path d="M12 5c-4-3-9-2-9-2v16s5-1 9 2c4-3 9-2 9-2V3s-5-1-9 2v16"/>',
+  shield:'<path d="M12 3L4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3zM8 12l3 3 5-6"/>',
+  arrow:'<path d="M4 12h16m-6-6l6 6-6 6"/>',
+  upload:'<path d="M12 16V3m-5 5l5-5 5 5M4 15v5a1 1 0 001 1h14a1 1 0 001-1v-5"/>',
+  file:'<path d="M14 2H5a1 1 0 00-1 1v18a1 1 0 001 1h14a1 1 0 001-1V8l-6-6v6h6M8 13h8m-8 4h8"/>',
+  plus:'<path d="M12 4v16M4 12h16"/>',
+  check:'<path d="M5 12l4 4L19 6"/>',
+  chevron:'<path d="M9 5l7 7-7 7"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  chart:'<path d="M3 3v18h18M7 15l4-5 4 3 6-8"/>',
+  cpu:'<rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4"/><rect x="9" y="9" width="6" height="6" rx="1"/>',
+  lock:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3M12 14v3"/>',
+  menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',
+  search:'<circle cx="10" cy="10" r="6"/><path d="M15 15l6 6"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/>',
+  close:'<path d="M6 6l12 12M6 18L18 6"/>',
+};
+export const icon = name => `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.grid}</svg>`;
+export function hydrateIcons(root = document) {root.querySelectorAll('[data-icon]').forEach(el => {el.innerHTML = icon(el.dataset.icon);});}

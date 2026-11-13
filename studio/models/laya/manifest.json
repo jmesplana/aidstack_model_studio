@@ -1,0 +1,24 @@
+{
+  "id": "laya",
+  "name": "Laya",
+  "description": "Small multilingual decision model. Train locally with Apple Silicon, NVIDIA, or CPU.",
+  "entrypoint": "studio.models.laya.adapter:LayaAdapter",
+  "question_types": ["choice", "score", "noul"],
+  "max_choices": 100,
+  "version": "0.4.31",
+  "settings": [
+    {"key":"base_checkpoint","label":"Starting checkpoint","type":"text","default":"multilingual","help":"A built-in name, local checkpoint folder, or Hugging Face model ID."},
+    {"key":"device","label":"Compute device","type":"select","default":"auto","options":["auto","mps","cuda","cpu"],"help":"Auto uses Apple Silicon or NVIDIA when available."},
+    {"key":"epochs","label":"Training passes","type":"integer","default":4,"min":1,"max":100,"help":"How many times the model learns from the training examples."},
+    {"key":"micro_batch","label":"Examples per step","type":"integer","default":1,"min":1,"max":64,"advanced":true},
+    {"key":"grad_accum","label":"Accumulate steps","type":"integer","default":16,"min":1,"max":256,"advanced":true},
+    {"key":"freeze_encoder","label":"Train decision head only","type":"boolean","default":true,"help":"Uses less memory. Turn off to also adapt language understanding; this needs more memory."},
+    {"key":"loss","label":"Training objective","type":"select","default":"soft-ce","options":["soft-ce","rlcd"],"advanced":true},
+    {"key":"encoder_lr","label":"Language learning rate","type":"number","default":0.000025,"min":0.0000001,"max":0.01,"advanced":true},
+    {"key":"head_lr","label":"Decision learning rate","type":"number","default":0.0001,"min":0.0000001,"max":0.01,"advanced":true},
+    {"key":"max_len","label":"Input token budget","type":"integer","default":2048,"min":128,"max":8192,"advanced":true},
+    {"key":"head_max_len","label":"Question token budget","type":"integer","default":512,"min":64,"max":4096,"advanced":true},
+    {"key":"seed","label":"Training seed","type":"integer","default":42,"min":0,"max":2147483647,"advanced":true},
+    {"key":"offline","label":"Use cached models only","type":"boolean","default":false,"help":"Prevents checkpoint downloads. Your examples always stay local."}
+  ]
+}

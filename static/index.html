@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Teach your local models from team-reviewed data. Prepare, train, compare, and approve classification experiments.">
+  <title>Aidstack Model Studio</title>
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+  <script type="module" src="/static/js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <aside class="sidebar">
+    <a href="#overview" class="brand"><img src="/static/icon.svg" width="34" height="34" alt=""><span>aidstack<span class="brand-dot">.</span><small>MODEL STUDIO</small></span></a>
+    <div class="workspace"><span class="workspace-icon">M</span><span>My workspace<small>Local workspace</small></span><span class="local-dot"></span></div>
+    <span class="nav-label">WORKSPACE</span>
+    <nav aria-label="Main navigation">
+      <a href="#overview" data-nav="overview"><span data-icon="grid"></span>Overview</a>
+      <a href="#experiments" data-nav="experiments"><span data-icon="flask"></span>Experiments<span id="experiment-count" class="nav-count">0</span></a>
+      <a href="#datasets" data-nav="datasets"><span data-icon="database"></span>Datasets</a>
+      <a href="#models" data-nav="models"><span data-icon="layers"></span>Model registry</a>
+    </nav>
+    <div class="nav-bottom"><a href="#settings" data-nav="settings"><span data-icon="settings"></span>Settings</a><a href="#guide" data-nav="guide"><span data-icon="book"></span>Getting started<span>↗</span></a></div>
+    <div class="local-note"><span data-icon="shield"></span><strong>Your data stays here.</strong><p>Datasets and model experiments are stored on this computer.</p><span class="local-pill"><i></i> Local environment</span></div>
+    <div class="profile"><span>MS</span><div>Model Studio<small>Personal workspace · v0.1</small></div></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><button id="menu" class="icon-button" aria-label="Toggle navigation"><span data-icon="menu"></span></button><div><span class="crumb">Workspace</span><span class="crumb-separator">/</span><span id="page-name">Overview</span></div><span class="environment"><i></i> Running locally <span class="divider">|</span> <span id="machine">This computer</span></span></header>
+    <main id="main" tabindex="-1"><div class="loading">Opening your workspace…</div></main>
+    <footer><span>Aidstack Model Studio</span><span>Built for better decisions.</span></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="dialog"><div id="dialog-content"></div></dialog>
+</body>
+</html>

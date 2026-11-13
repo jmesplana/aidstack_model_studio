@@ -1,0 +1,15 @@
+{
+  "name": "aidstack-model-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/run.mjs dev",
+    "start": "node scripts/run.mjs start",
+    "setup": "node scripts/run.mjs setup",
+    "setup:model": "node scripts/run.mjs setup-model",
+    "serve:model": "node scripts/run.mjs serve",
+    "test": "node scripts/run.mjs test"
+  },
+  "engines": {"node": ">=18"}
+}
